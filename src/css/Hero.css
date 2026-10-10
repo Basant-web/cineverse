@@ -1,0 +1,326 @@
+/* ========================================
+   HERO / FEATURED MOVIE
+======================================== */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 660px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #0b1020;
+  background-image: none;
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+}
+
+/* Dark cinematic overlay */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  display: flex;
+  align-items: center;
+
+  padding: 70px max(7%, calc((100% - 1400px) / 2));
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 16, 32, 0.99) 0%,
+      rgba(11, 16, 32, 0.94) 32%,
+      rgba(11, 16, 32, 0.76) 58%,
+      rgba(11, 16, 32, 0.30) 100%
+    ),
+    linear-gradient(
+      0deg,
+      #0b1020 0%,
+      rgba(11, 16, 32, 0.25) 45%,
+      rgba(11, 16, 32, 0.10) 100%
+    );
+}
+
+/* Hero content */
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 680px;
+
+  color: #ffffff;
+}
+
+/* Featured badge */
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 28px;
+  padding: 11px 16px;
+
+  border: 1px solid rgba(255, 193, 7, 0.2);
+  border-radius: 8px;
+
+  background: rgba(255, 193, 7, 0.10);
+  color: #ffc107;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+/* Movie title */
+
+.hero-content h1 {
+  max-width: 680px;
+
+  margin: 0 0 30px;
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+  font-size: clamp(42px, 5.2vw, 76px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -2px;
+
+  overflow-wrap: anywhere;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Metadata */
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  margin-bottom: 28px;
+
+  color: #d4dbea;
+
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+}
+
+.hero-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #ffc107;
+  font-weight: 800;
+}
+
+.hero-genre {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 11px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 7px;
+
+  background: rgba(11, 16, 32, 0.65);
+  color: #ffffff;
+
+  font-size: 13px;
+}
+
+/* Movie description */
+
+.hero-description {
+  max-width: 620px;
+
+  margin: 0 0 35px;
+
+  color: #d0d7e5;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.9;
+
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Buttons */
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-btn {
+  min-height: 52px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 22px;
+
+  border: 1px solid transparent;
+  border-radius: 9px;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+}
+
+.primary-btn {
+  background: #ffc107;
+  border-color: #ffc107;
+  color: #0b1020;
+}
+
+.primary-btn:hover {
+  background: #ffda55;
+  border-color: #ffda55;
+}
+
+.secondary-btn {
+  background: rgba(21, 28, 48, 0.72);
+  border-color: #59647c;
+  color: #ffffff;
+}
+
+.secondary-btn:hover {
+  background: rgba(37, 47, 70, 0.95);
+  border-color: #ffc107;
+}
+
+/* Loading / empty state */
+
+.hero:has(.hero-content h1) {
+  background-color: #0b1020;
+}
+
+.hero-content [role="alert"] {
+  margin-top: 18px;
+  color: #ff8585;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 590px;
+  }
+
+  .hero-overlay {
+    padding: 55px 5%;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(11, 16, 32, 0.97) 0%,
+        rgba(11, 16, 32, 0.88) 65%,
+        rgba(11, 16, 32, 0.60) 100%
+      ),
+      linear-gradient(
+        0deg,
+        #0b1020 0%,
+        transparent 65%
+      );
+  }
+
+  .hero-content {
+    max-width: 600px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(40px, 6vw, 60px);
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 560px;
+    background-position: center top;
+  }
+
+  .hero-overlay {
+    padding: 42px 22px;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(11, 16, 32, 0.96),
+        rgba(11, 16, 32, 0.82)
+      ),
+      linear-gradient(
+        0deg,
+        #0b1020 0%,
+        transparent 100%
+      );
+  }
+
+  .hero-badge {
+    margin-bottom: 23px;
+    padding: 9px 12px;
+    font-size: 11px;
+    letter-spacing: 1.3px;
+  }
+
+  .hero-content h1 {
+    margin-bottom: 22px;
+
+    font-size: clamp(34px, 10vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -1px;
+  }
+
+  .hero-meta {
+    gap: 10px;
+    margin-bottom: 23px;
+    font-size: 13px;
+  }
+
+  .hero-description {
+    margin-bottom: 28px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .hero-btn {
+    min-height: 46px;
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+}

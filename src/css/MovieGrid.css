@@ -1,0 +1,72 @@
+/* ========================================
+   MOVIE GRID
+======================================== */
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+  width: 100%;
+  margin: 25px 0;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+
+.empty-movies {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  padding: 40px 20px;
+  text-align: center;
+  color: #aab2c5;
+}
+
+.empty-movies svg {
+  margin-bottom: 16px;
+  color: #ffc107;
+}
+
+.empty-movies h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.empty-movies p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   RESPONSIVE GRID
+======================================== */
+
+@media (max-width: 1100px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+
+@media (max-width: 800px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+  }
+}

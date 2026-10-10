@@ -1,0 +1,180 @@
+/* ========================================
+   SEARCH SECTION
+======================================== */
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  margin: 25px 0 30px;
+}
+
+/* ========================================
+   SEARCH INPUT
+======================================== */
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  max-width: 650px;
+  min-height: 54px;
+  padding: 0 16px;
+
+  background: #151d30;
+  border: 1px solid #273149;
+  border-radius: 12px;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #ffc107;
+  box-shadow: 0 0 0 3px rgb(255 193 7 / 10%);
+}
+
+.search-icon {
+  flex-shrink: 0;
+  color: #aab2c5;
+}
+
+.search-input-wrapper input {
+  flex: 1;
+  min-width: 0;
+  height: 52px;
+
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  outline: none;
+
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #78849c;
+}
+
+/* Clear button */
+
+.clear-search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  color: #aab2c5;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.clear-search-button:hover {
+  color: #ffc107;
+  background: #252e45;
+}
+
+/* ========================================
+   GENRE FILTERS
+======================================== */
+
+.genre-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.genre-button {
+  padding: 9px 17px;
+
+  color: #aab2c5;
+  background: #151d30;
+  border: 1px solid #273149;
+  border-radius: 25px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  white-space: nowrap;
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.genre-button:hover {
+  color: #ffffff;
+  border-color: #ffc107;
+  transform: translateY(-1px);
+}
+
+.genre-button.selected {
+  color: #0b1020;
+  background: #ffc107;
+  border-color: #ffc107;
+  font-weight: 700;
+}
+
+/* Keyboard accessibility */
+
+.genre-button:focus-visible,
+.clear-search-button:focus-visible {
+  outline: 2px solid #ffc107;
+  outline-offset: 3px;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+  .search-section {
+    gap: 18px;
+    margin: 20px 0 25px;
+  }
+
+  .search-input-wrapper {
+    min-height: 48px;
+    padding: 0 12px;
+  }
+
+  .search-input-wrapper input {
+    height: 46px;
+    font-size: 14px;
+  }
+
+  .genre-filters {
+    gap: 8px;
+  }
+
+  .genre-button {
+    padding: 8px 13px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-input-wrapper,
+  .genre-button {
+    transition: none;
+  }
+}

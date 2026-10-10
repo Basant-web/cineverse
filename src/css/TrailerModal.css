@@ -1,0 +1,135 @@
+.trailer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+.trailer-modal {
+  width: 100%;
+  max-width: 900px;
+
+  overflow: hidden;
+
+  border: 1px solid #273047;
+  border-radius: 14px;
+
+  background: #0b1020;
+  color: #ffffff;
+
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+
+  animation: trailerModalEnter 0.25s ease;
+}
+
+.trailer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 16px 20px;
+
+  border-bottom: 1px solid #273047;
+}
+
+.trailer-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.trailer-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.trailer-close:hover {
+  background: #1b2438;
+  color: #ffc107;
+}
+
+.trailer-video {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  background: #000000;
+}
+
+.trailer-video iframe {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+}
+
+@keyframes trailerModalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .trailer-backdrop {
+    padding: 12px;
+  }
+
+  .trailer-header {
+    padding: 12px;
+  }
+
+  .trailer-header h2 {
+    font-size: 15px;
+  }
+
+  .trailer-close {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trailer-modal {
+    animation: none;
+  }
+}
